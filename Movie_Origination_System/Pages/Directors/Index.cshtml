@@ -1,0 +1,54 @@
+﻿@page
+@model Movie_Origination_System.Pages.Directors.IndexModel
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-page="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Director_details[0].Movie_Director_Name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Director_details[0].Movie_Director_Email)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Director_details[0].Movie_Director_Mobile)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Director_details[0].Movie_Director_Occupations)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.Director_details) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Movie_Director_Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Movie_Director_Email)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Movie_Director_Mobile)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Movie_Director_Occupations)
+            </td>
+            <td>
+                <a asp-page="./Edit" asp-route-id="@item.Movie_Director_ID">Edit</a> |
+                <a asp-page="./Details" asp-route-id="@item.Movie_Director_ID">Details</a> |
+                <a asp-page="./Delete" asp-route-id="@item.Movie_Director_ID">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

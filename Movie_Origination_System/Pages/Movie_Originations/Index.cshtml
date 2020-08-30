@@ -1,0 +1,48 @@
+﻿@page
+@model Movie_Origination_System.Pages.Movie_Originations.IndexModel
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-page="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Movie_Origination_Table[0].Movie_ID)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Movie_Origination_Table[0].Movie_Producer_ID)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Movie_Origination_Table[0].Movie_Director_ID)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.Movie_Origination_Table) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Movie_ID)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Movie_Producer_ID)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Movie_Director_ID)
+            </td>
+            <td>
+                <a asp-page="./Edit" asp-route-id="@item.Movie_Origination_ID">Edit</a> |
+                <a asp-page="./Details" asp-route-id="@item.Movie_Origination_ID">Details</a> |
+                <a asp-page="./Delete" asp-route-id="@item.Movie_Origination_ID">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

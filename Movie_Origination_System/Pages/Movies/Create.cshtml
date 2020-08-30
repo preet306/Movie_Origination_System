@@ -1,0 +1,49 @@
+﻿@page
+@model Movie_Origination_System.Pages.Movies.CreateModel
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+
+<h4>Movie_details</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Movie_details.Movie_Name" class="control-label"></label>
+                <input asp-for="Movie_details.Movie_Name" class="form-control" />
+                <span asp-validation-for="Movie_details.Movie_Name" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Movie_details.Movie_Release_Date" class="control-label"></label>
+                <input asp-for="Movie_details.Movie_Release_Date" class="form-control" />
+                <span asp-validation-for="Movie_details.Movie_Release_Date" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Movie_details.Movie_Language" class="control-label"></label>
+                <input asp-for="Movie_details.Movie_Language" class="form-control" />
+                <span asp-validation-for="Movie_details.Movie_Language" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Movie_details.Movie_Running_Time" class="control-label"></label>
+                <input asp-for="Movie_details.Movie_Running_Time" class="form-control" />
+                <span asp-validation-for="Movie_details.Movie_Running_Time" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

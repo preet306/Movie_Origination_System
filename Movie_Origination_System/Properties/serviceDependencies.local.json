@@ -1,0 +1,12 @@
+{
+  "dependencies": {
+    "mssql1": {
+      "type": "mssql.local",
+      "connectionId": "Movie_Origination_Systemdatabase"
+    },
+    "mssql2": {
+      "type": "mssql.local",
+      "connectionId": "Movie_Origination_System_DB"
+    }
+  }
+}
